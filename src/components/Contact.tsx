@@ -53,18 +53,25 @@ export function Contact() {
               </div>
             ))}
 
-            {/* Map placeholder */}
-            <div className="relative overflow-hidden rounded-2xl aspect-[4/3] shadow-glass">
-              <img
-                src="https://images.pexels.com/photos/3184340/pexels-photo-3184340.jpeg?auto=compress&cs=tinysrgb&w=700"
-                alt="Alucan offices"
-                className="h-full w-full object-cover"
+            {/* Google Maps embed */}
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/3] shadow-glass border border-surface-300 dark:border-dark-border">
+              <iframe
+                title="Alucan Packaging – Johannesburg, South Africa"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57294.73540626798!2d27.955494753613273!3d-26.20534395839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c68f0406a51%3A0x238ac9d9b1d34041!2sJohannesburg%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1709640000000!5m2!1sen!2sza"
+                width="100%"
+                height="100%"
+                style={{ border: 0, position: "absolute", inset: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
-              <div className="absolute inset-0 bg-brand/30" />
-              <div className="absolute bottom-4 left-4 glass-card border-white/20 bg-white/10 backdrop-blur px-4 py-2">
-                <p className="text-xs font-bold text-white">Johannesburg, SA</p>
+              {/* Branded chip overlay */}
+              <div className="absolute bottom-3 left-3 z-10 glass-card border-white/20 bg-white/90 dark:bg-dark-card/90 backdrop-blur px-3 py-1.5 flex items-center gap-2 shadow-glass pointer-events-none">
+                <span className="h-2 w-2 rounded-full bg-brand-accent animate-pulse" />
+                <p className="text-xs font-bold text-brand dark:text-dark-text">Johannesburg, South Africa</p>
               </div>
             </div>
+
           </motion.div>
 
           {/* Right: Form */}
