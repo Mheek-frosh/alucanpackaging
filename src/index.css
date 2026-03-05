@@ -3,15 +3,74 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-surface-100 text-brand-light antialiased selection:bg-brand-accent/20 selection:text-brand-accent overflow-x-hidden;
-    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  * {
+    box-sizing: border-box;
   }
-  
+
   html {
     scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply bg-surface-100 text-brand transition-colors duration-300;
+  }
+
+  .dark body,
+  body.dark {
+    @apply bg-dark-bg text-dark-text;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-200 dark:bg-dark-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-steel rounded-full;
+  }
+}
+
+@layer components {
+
+  /* Nav link underline effect (Premplus style) */
+  .nav-link {
+    @apply relative text-sm font-medium text-brand dark:text-dark-text transition-colors duration-200 hover:text-brand-accent dark:hover:text-brand-accent;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 right-0 h-[2px] bg-brand-accent scale-x-0 origin-left transition-transform duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply scale-x-100;
+  }
+
+  /* Glass card */
+  .glass-card {
+    @apply bg-white/80 dark:bg-dark-card/80 backdrop-blur-xl border border-surface-300 dark:border-dark-border rounded-2xl shadow-glass;
+  }
+
+  /* Premium button */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-accent px-6 py-3 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:brightness-110 hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-accent/60 px-6 py-3 text-sm font-semibold text-brand-accent transition-all duration-200 hover:bg-brand-accent hover:text-white active:scale-95;
+  }
+
+  /* Section tag */
+  .section-tag {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-accent;
   }
 }
 
@@ -19,4 +78,3 @@
   outline: 2px solid theme('colors.brand.accent');
   outline-offset: 2px;
 }
-

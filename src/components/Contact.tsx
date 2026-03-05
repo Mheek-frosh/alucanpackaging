@@ -1,75 +1,143 @@
 import { motion } from "framer-motion";
+import { FormEvent } from "react";
+
+const inquiryTypes = ["Beverage Cans", "Aerosol Cans", "Tinplate Cans", "CanStudio™ Innovation", "General Enquiry", "Investor Relations"];
+
+const contactDetails = [
+  { icon: "📍", label: "Head Office", value: "Johannesburg, South Africa" },
+  { icon: "📞", label: "Telephone", value: "+27 (0)11 000 0000" },
+  { icon: "✉️", label: "Email", value: "info@alucanpackaging.com" },
+  { icon: "📈", label: "JSE Listing", value: "Ordinary shares listed since 1971" },
+];
 
 export function Contact() {
-  return (
-    <section id="contact" className="bg-white py-32">
-      <div className="mx-auto max-w-[800px] px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-16 text-center"
-        >
-          <h2 className="mb-4 font-display text-4xl font-bold tracking-tight text-brand md:text-5xl">
-            Start a conversation.
-          </h2>
-          <p className="text-lg font-medium text-gray-500">
-            Tell us about your next project.
-          </p>
-        </motion.div>
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => { e.preventDefault(); };
 
-        <motion.form
+  return (
+    <section id="contact" className="bg-surface-100 dark:bg-dark-bg py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6">
+
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="space-y-6"
-          onSubmit={(e) => e.preventDefault()}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-16 text-center max-w-2xl mx-auto"
         >
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div>
-              <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-gray-400">Name</label>
-              <input
-                type="text"
-                className="w-full border-b border-surface-300 bg-transparent py-3 text-lg font-medium text-brand outline-none transition-colors focus:border-brand-accent placeholder:text-gray-300"
-                placeholder="John Doe"
-              />
-            </div>
-            <div>
-              <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-gray-400">Company</label>
-              <input
-                type="text"
-                className="w-full border-b border-surface-300 bg-transparent py-3 text-lg font-medium text-brand outline-none transition-colors focus:border-brand-accent placeholder:text-gray-300"
-                placeholder="Company Ltd"
-              />
-            </div>
-          </div>
-          <div>
-            <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-gray-400">Email</label>
-            <input
-              type="email"
-              className="w-full border-b border-surface-300 bg-transparent py-3 text-lg font-medium text-brand outline-none transition-colors focus:border-brand-accent placeholder:text-gray-300"
-              placeholder="hello@example.com"
-            />
-          </div>
-          <div>
-            <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-gray-400">Message</label>
-            <textarea
-              rows={3}
-              className="w-full resize-none border-b border-surface-300 bg-transparent py-3 text-lg font-medium text-brand outline-none transition-colors focus:border-brand-accent placeholder:text-gray-300"
-              placeholder="Tell us about volumes, timelines, formats..."
-            />
-          </div>
-          <button
-            type="submit"
-            className="mt-8 flex w-full items-center justify-center rounded-full bg-brand py-4 text-sm font-semibold text-white transition-transform hover:scale-[1.02] active:scale-[0.98]"
+          <span className="section-tag mb-4">Get In Touch</span>
+          <h2 className="mt-4 text-4xl font-black tracking-tight text-brand dark:text-dark-text md:text-5xl">
+            Start a Conversation
+          </h2>
+          <p className="mt-4 text-lg font-medium text-brand-steel dark:text-dark-muted">
+            Whether you're exploring new formats, renegotiating supply or investing — our team is ready.
+          </p>
+        </motion.div>
+
+        <div className="grid gap-10 lg:grid-cols-5 lg:items-start">
+
+          {/* Left: Contact details */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-2 space-y-6"
           >
-            Submit Enquiry
-          </button>
-        </motion.form>
+            {contactDetails.map((d) => (
+              <div key={d.label} className="glass-card p-5 flex items-start gap-4">
+                <span className="text-2xl">{d.icon}</span>
+                <div>
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-brand-accent">{d.label}</p>
+                  <p className="text-[14px] font-semibold text-brand dark:text-dark-text mt-0.5">{d.value}</p>
+                </div>
+              </div>
+            ))}
+
+            {/* Map placeholder */}
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/3] shadow-glass">
+              <img
+                src="https://images.pexels.com/photos/3184340/pexels-photo-3184340.jpeg?auto=compress&cs=tinysrgb&w=700"
+                alt="Alucan offices"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-brand/30" />
+              <div className="absolute bottom-4 left-4 glass-card border-white/20 bg-white/10 backdrop-blur px-4 py-2">
+                <p className="text-xs font-bold text-white">Johannesburg, SA</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right: Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-3 glass-card p-8"
+          >
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label className="block text-[11px] font-bold uppercase tracking-widest text-brand-steel dark:text-dark-muted mb-2">First Name *</label>
+                  <input
+                    type="text"
+                    required
+                    className="w-full rounded-xl border border-surface-300 dark:border-dark-border bg-surface-50 dark:bg-dark-bg px-4 py-3 text-sm text-brand dark:text-dark-text placeholder:text-brand-steel/50 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none transition-colors"
+                    placeholder="John"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] font-bold uppercase tracking-widest text-brand-steel dark:text-dark-muted mb-2">Last Name *</label>
+                  <input
+                    type="text"
+                    required
+                    className="w-full rounded-xl border border-surface-300 dark:border-dark-border bg-surface-50 dark:bg-dark-bg px-4 py-3 text-sm text-brand dark:text-dark-text placeholder:text-brand-steel/50 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none transition-colors"
+                    placeholder="Doe"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="block text-[11px] font-bold uppercase tracking-widest text-brand-steel dark:text-dark-muted mb-2">Company *</label>
+                <input
+                  type="text"
+                  required
+                  className="w-full rounded-xl border border-surface-300 dark:border-dark-border bg-surface-50 dark:bg-dark-bg px-4 py-3 text-sm text-brand dark:text-dark-text placeholder:text-brand-steel/50 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none transition-colors"
+                  placeholder="Company Ltd."
+                />
+              </div>
+              <div>
+                <label className="block text-[11px] font-bold uppercase tracking-widest text-brand-steel dark:text-dark-muted mb-2">Email *</label>
+                <input
+                  type="email"
+                  required
+                  className="w-full rounded-xl border border-surface-300 dark:border-dark-border bg-surface-50 dark:bg-dark-bg px-4 py-3 text-sm text-brand dark:text-dark-text placeholder:text-brand-steel/50 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none transition-colors"
+                  placeholder="john@company.com"
+                />
+              </div>
+              <div>
+                <label className="block text-[11px] font-bold uppercase tracking-widest text-brand-steel dark:text-dark-muted mb-2">Area of Enquiry</label>
+                <select className="w-full rounded-xl border border-surface-300 dark:border-dark-border bg-surface-50 dark:bg-dark-bg px-4 py-3 text-sm text-brand dark:text-dark-text focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none transition-colors">
+                  {inquiryTypes.map((t) => <option key={t}>{t}</option>)}
+                </select>
+              </div>
+              <div>
+                <label className="block text-[11px] font-bold uppercase tracking-widest text-brand-steel dark:text-dark-muted mb-2">Message</label>
+                <textarea
+                  rows={4}
+                  className="w-full resize-none rounded-xl border border-surface-300 dark:border-dark-border bg-surface-50 dark:bg-dark-bg px-4 py-3 text-sm text-brand dark:text-dark-text placeholder:text-brand-steel/50 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none transition-colors"
+                  placeholder="Tell us about your volumes, timelines and formats..."
+                />
+              </div>
+              <button type="submit" className="btn-primary w-full justify-center py-4 text-base">
+                Send Enquiry →
+              </button>
+              <p className="text-center text-[11px] text-brand-steel">
+                We typically respond within 1 business day.
+              </p>
+            </form>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
 }
-

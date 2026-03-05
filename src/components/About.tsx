@@ -1,60 +1,112 @@
 import { motion } from "framer-motion";
 
+const milestones = [
+  { year: "1968", event: "Company founded in South Africa" },
+  { year: "1971", event: "Listed on the Johannesburg Stock Exchange" },
+  { year: "1998", event: "Angola manufacturing operations established" },
+  { year: "2012", event: "300M+ annual capacity milestone reached" },
+  { year: "2024", event: "Launched CanStudio™ innovation programme" },
+];
+
 export function About() {
   return (
-    <section
-      id="about"
-      className="bg-surface-50 py-32 md:py-48"
-    >
-      <div className="mx-auto max-w-[1000px] px-6">
+    <section id="about" className="bg-surface-50 dark:bg-dark-bg py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6">
+
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center text-center"
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-16 grid gap-8 lg:grid-cols-2 lg:items-end"
         >
-          <h2 className="mb-8 font-display text-4xl font-bold tracking-tight text-brand md:text-5xl lg:text-6xl text-balance">
-            A distinct approach to <br /> metals packaging.
-          </h2>
-          <p className="max-w-[800px] text-lg font-medium leading-relaxed text-gray-500 md:text-2xl text-balance">
-            Alucan is a specialist metals packaging studio that blends engineering discipline with brand thinking. We help beverage, personal care and household brands turn cans into a powerful extension of their identity.
+          <div>
+            <span className="section-tag mb-4">Who We Are</span>
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-brand dark:text-dark-text leading-tight md:text-5xl">
+              Africa's Leading <br />Metals Packaging Group
+            </h2>
+          </div>
+          <p className="text-lg font-medium leading-relaxed text-brand-steel dark:text-dark-muted max-w-xl">
+            Alucan is a focused metals packaging business specialising in aluminium and tinplate cans for beverage and diversified markets. With plants in South Africa and Angola, we serve blue-chip customers with precision and purpose.
           </p>
         </motion.div>
 
-        <div className="mt-32 grid gap-16 md:grid-cols-3">
-          {[
-            {
-              title: "Distinctive capabilities",
-              description: "Deep engineering expertise, multi-decade customer relationships and disciplined operational excellence."
-            },
-            {
-              title: "Defensive segment",
-              description: "Beverage and essential goods packaging with resilient demand profiles and sustainable growth."
-            },
-            {
-              title: "Blue-chip customers",
-              description: "Partner to leading regional and multinational brands that depend on reliable supply and quality."
-            }
-          ].map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col items-center text-center"
-            >
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-3xl bg-surface-200">
-                <span className="text-xl text-brand font-semibold">{i + 1}</span>
+        {/* Two column layout */}
+        <div className="grid gap-10 lg:grid-cols-5 lg:items-start">
+
+          {/* Left: Big image with glass info card */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="relative lg:col-span-2"
+          >
+            <div className="relative overflow-hidden rounded-3xl shadow-glass">
+              <img
+                src="https://images.pexels.com/photos/3861943/pexels-photo-3861943.jpeg?auto=compress&cs=tinysrgb&w=900"
+                alt="Alucan packaging facility"
+                className="aspect-[3/4] w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/20 to-transparent" />
+              {/* Floating stat card */}
+              <div className="absolute bottom-6 left-6 right-6 glass-card border-white/20 bg-white/10 backdrop-blur-xl p-4">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-brand-accent mb-1">JSE Listed Entity</p>
+                <p className="text-lg font-black text-white">55+ Years of Market Trust</p>
+                <p className="text-xs text-white/70 mt-1">Publicly owned. Proudly South African.</p>
               </div>
-              <h3 className="mb-4 text-xl font-bold text-brand">{item.title}</h3>
-              <p className="text-[15px] font-medium leading-relaxed text-gray-500">{item.description}</p>
-            </motion.div>
-          ))}
+            </div>
+          </motion.div>
+
+          {/* Right: Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-3 space-y-8"
+          >
+            <div className="space-y-4 text-[15px] font-medium leading-relaxed text-brand-steel dark:text-dark-muted">
+              <p>
+                Alucan Packaging is a publicly listed entity whose shares have been on the Johannesburg Stock Exchange for over 55 years. We are a focused metals packaging business with deep expertise in aluminium and tinplate — designed for resilience, performance, and growth.
+              </p>
+              <p>
+                Our manufacturing facilities in South Africa and Angola position us to serve a broad range of customers across Southern and Central Africa. We partner with leading beverage brands, consumer goods manufacturers, and household product companies who demand consistent quality and reliable supply.
+              </p>
+            </div>
+
+            {/* Value pillars */}
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                { icon: "🏭", title: "Engineering Excellence", desc: "Deep technical capabilities across high-speed beverage and specialised packaging lines." },
+                { icon: "🤝", title: "Long-Term Partnerships", desc: "We invest in shared roadmaps with blue-chip customers for sustainable growth." },
+                { icon: "♻️", title: "Circular Economy", desc: "Aluminium and tinplate are infinitely recyclable — we build that into every decision." },
+                { icon: "📈", title: "JSE Listed & Governed", desc: "Strong corporate governance, accountability and investor transparency since 1971." },
+              ].map((p) => (
+                <div key={p.title} className="glass-card p-5 hover:shadow-glow transition-shadow">
+                  <span className="text-2xl mb-3 block">{p.icon}</span>
+                  <h4 className="text-sm font-bold text-brand dark:text-dark-text mb-1">{p.title}</h4>
+                  <p className="text-[12px] text-brand-steel dark:text-dark-muted leading-relaxed">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Timeline */}
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-widest text-brand dark:text-dark-text mb-4">Company Milestones</h4>
+              <div className="space-y-3">
+                {milestones.map((m) => (
+                  <div key={m.year} className="flex items-start gap-4">
+                    <span className="min-w-[48px] rounded-lg bg-brand-accent/10 px-2 py-1 text-center text-xs font-bold text-brand-accent">{m.year}</span>
+                    <span className="text-[13px] text-brand-steel dark:text-dark-muted pt-0.5">{m.event}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
 }
-
