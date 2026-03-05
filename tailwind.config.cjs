@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
@@ -8,9 +9,9 @@ module.exports = {
       },
       colors: {
         brand: {
-          DEFAULT: "#0F172A",
-          light: "#1E293B",
-          accent: "#38BDF8"
+          DEFAULT: "#0B2447", // deep corporate blue
+          light: "#19376D",
+          accent: "#F4B41A" // warm gold accent inspired by PremPlus
         }
       },
       boxShadow: {

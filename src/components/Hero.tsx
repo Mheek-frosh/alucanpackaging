@@ -19,25 +19,10 @@ export function Hero() {
       className="relative overflow-hidden pt-28 pb-24 md:pt-32 md:pb-28"
     >
       <div className="pointer-events-none absolute inset-0">
-        <video
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source
-            src="https://videos.pexels.com/video-files/3209825/3209825-hd_1920_1080_25fps.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(15,23,42,0.2),transparent_55%),linear-gradient(to_bottom,rgba(15,23,42,0.95),rgba(15,23,42,0.98))]" />
-      </div>
-
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-cyan-500/20 blur-3xl" />
-        <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-sky-400/15 blur-3xl" />
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-700/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-slate-950 dark:via-slate-950 dark:to-slate-950" />
+        <div className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-brand-accent/10 blur-3xl" />
+        <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-sky-400/10 blur-3xl" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-300/70 to-transparent dark:via-slate-700/60" />
       </div>
 
       <div className="relative mx-auto flex max-w-6xl flex-col items-start gap-14 px-4 md:flex-row md:items-center md:gap-20 md:px-6">
@@ -47,17 +32,17 @@ export function Hero() {
           animate="visible"
           className="max-w-xl space-y-6"
         >
-          <p className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-emerald-300">
+          <p className="inline-flex items-center gap-2 rounded-full border border-brand-accent/30 bg-brand-accent/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-accent">
             Focused metals packaging
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
           </p>
-          <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
-            Evolving metals packaging{" "}
-            <span className="bg-gradient-to-br from-sky-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">
-              into an advantage.
+          <h1 className="text-balance text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl md:text-6xl dark:text-slate-50">
+            Official metals packaging partner
+            <span className="block bg-gradient-to-br from-brand-accent via-amber-400 to-amber-300 bg-clip-text text-transparent">
+              for leading African brands.
             </span>
           </h1>
-          <p className="text-balance text-sm text-slate-300 sm:text-base">
+          <p className="text-balance text-sm text-slate-600 sm:text-base dark:text-slate-300">
             Alucan Packaging is a high-quality, market-leading metals packaging
             business focused on aluminium and tinplate cans. From state-of-the-art
             beverage lines to specialised aerosol and two-piece tinplate cans, we
@@ -67,33 +52,33 @@ export function Hero() {
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <a
               href="#contact"
-              className="rounded-full bg-slate-50 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-950 shadow-soft transition hover:bg-cyan-400"
+              className="rounded-full bg-brand-accent px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-950 shadow-soft transition hover:bg-amber-400"
             >
-              Partner with us
+              Talk to our team
             </a>
             <a
               href="#capabilities"
-              className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300 hover:text-sky-300"
+              className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-700 hover:text-brand-accent dark:text-slate-300 dark:hover:text-sky-300"
             >
               Explore our capabilities
             </a>
           </div>
 
-          <div className="grid gap-4 pt-6 text-xs text-slate-300 sm:grid-cols-3">
+          <div className="grid gap-4 pt-6 text-xs text-slate-600 sm:grid-cols-3 dark:text-slate-300">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
                 Footprint
               </p>
               <p>Manufacturing in South Africa and Angola.</p>
             </div>
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
                 Focus
               </p>
               <p>Aluminium beverage, tinplate and monobloc aerosol cans.</p>
             </div>
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
                 Approach
               </p>
               <p>Trusted products, excellent service and sustainable growth.</p>
@@ -107,8 +92,8 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="relative w-full max-w-md"
         >
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/40 shadow-soft backdrop-blur-2xl">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.3),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(8,47,73,0.9),_rgba(15,23,42,1))]" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-slate-200/80 bg-white/70 shadow-soft backdrop-blur-2xl dark:border-slate-700/60 dark:bg-slate-900/40">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(15,118,210,0.22),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(15,23,42,0.95),_rgba(15,23,42,1))] dark:bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.3),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(8,47,73,0.9),_rgba(15,23,42,1))]" />
 
             <div className="relative flex h-full flex-col justify-between p-6">
               <div className="space-y-4">
@@ -116,25 +101,33 @@ export function Hero() {
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
                   Live production line
                 </div>
-                <h2 className="text-lg font-semibold text-slate-50">
+                <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-50">
                   Precision-engineered aluminium & tinplate cans
                 </h2>
-                <p className="text-[11px] text-slate-300">
+                <p className="text-[11px] text-slate-600 dark:text-slate-300">
                   High-speed, high-volume lines with rigorous quality controls,
                   delivering consistent packaging performance for leading
                   beverage and diversified brands.
                 </p>
-                <div className="overflow-hidden rounded-2xl border border-slate-700/70">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-700/70">
                   <img
                     src="https://images.pexels.com/photos/5437301/pexels-photo-5437301.jpeg?auto=compress&cs=tinysrgb&w=1200"
                     alt="Close-up of aluminium beverage cans on a production line"
-                    className="h-32 w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]"
+                      className="h-28 w-full object-cover transition duration-700 ease-out hover:scale-[1.03]"
+                    />
+                  </div>
+                  <div className="overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-700/70">
+                    <img
+                      src="https://images.pexels.com/photos/2360673/pexels-photo-2360673.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                      alt="Industrial view of a modern manufacturing facility"
+                      className="h-28 w-full object-cover transition duration-700 ease-out hover:scale-[1.03]"
                   />
                 </div>
               </div>
 
-              <div className="grid gap-3 text-[11px] text-slate-200">
-                <div className="flex items-center justify-between rounded-2xl bg-slate-900/70 px-3 py-2 ring-1 ring-slate-700/70">
+              <div className="grid gap-3 pt-4 text-[11px] text-slate-700 dark:text-slate-200">
+                <div className="flex items-center justify-between rounded-2xl bg-slate-100/80 px-3 py-2 ring-1 ring-slate-200/80 dark:bg-slate-900/70 dark:ring-slate-700/70">
                   <span className="uppercase tracking-[0.2em] text-slate-400">
                     Beverage cans
                   </span>
@@ -142,7 +135,7 @@ export function Hero() {
                     Largest in SA & Angola
                   </span>
                 </div>
-                <div className="flex items-center justify-between rounded-2xl bg-slate-900/60 px-3 py-2 ring-1 ring-slate-800/70">
+                <div className="flex items-center justify-between rounded-2xl bg-slate-100/70 px-3 py-2 ring-1 ring-slate-200/80 dark:bg-slate-900/60 dark:ring-slate-800/70">
                   <span className="uppercase tracking-[0.2em] text-slate-400">
                     Aerosol
                   </span>
@@ -150,7 +143,7 @@ export function Hero() {
                     Aluminium monobloc expertise
                   </span>
                 </div>
-                <div className="flex items-center justify-between rounded-2xl bg-slate-900/40 px-3 py-2 ring-1 ring-slate-800/70">
+                <div className="flex items-center justify-between rounded-2xl bg-slate-100/60 px-3 py-2 ring-1 ring-slate-200/80 dark:bg-slate-900/40 dark:ring-slate-800/70">
                   <span className="uppercase tracking-[0.2em] text-slate-400">
                     Tinplate
                   </span>
