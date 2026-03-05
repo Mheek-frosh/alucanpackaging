@@ -9,9 +9,9 @@ module.exports = {
       },
       colors: {
         brand: {
-          DEFAULT: "#0B2447", // deep corporate blue
+          DEFAULT: "#0B2447",
           light: "#19376D",
-          accent: "#F4B41A" // warm gold accent inspired by PremPlus
+          accent: "#F97316"
         }
       },
       boxShadow: {

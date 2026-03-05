@@ -13,7 +13,7 @@ export function Footprint() {
               Our footprint
             </p>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl dark:text-slate-50">
-              Strategically located in Southern Africa.
+              Where design, production and delivery connect.
             </h2>
           </div>
           <p className="max-w-md text-xs text-slate-600 md:text-[13px] dark:text-slate-300">

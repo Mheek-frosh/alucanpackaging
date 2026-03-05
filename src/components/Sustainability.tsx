@@ -19,18 +19,17 @@ export function Sustainability() {
               Sustainability
             </p>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl dark:text-slate-50">
-              Recyclable by design. Lighter by choice.
+              Metals that stay in the loop.
             </h2>
             <p className="text-sm leading-relaxed text-slate-600 md:text-[15px] dark:text-slate-300">
-              We actively promote the recyclability of our products and work
-              continuously to reduce the weight of our cans. Every gram removed
-              reduces material use, energy intensity and environmental impact
-              across the value chain, without compromising performance.
+              Every can that leaves an Alucan line is designed with its next
+              life in mind. We optimise gauges, coatings and formats so packs are
+              easy to recover, recycle and remake.
             </p>
             <p className="text-sm leading-relaxed text-slate-600 md:text-[15px] dark:text-slate-300">
-              Working closely with our customers and industry partners, we
-              support responsible sourcing, circular material flows and
-              efficient collection and recycling ecosystems in our markets.
+              Our sustainability work is pragmatic: fewer materials, smarter
+              logistics, and production decisions backed by lifecycle thinking –
+              not just marketing claims.
             </p>
 
             <dl className="grid gap-4 text-xs text-slate-700 sm:grid-cols-3 dark:text-slate-200">

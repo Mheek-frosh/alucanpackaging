@@ -16,31 +16,27 @@ export function About() {
             className="space-y-5"
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-cyan-300">
-              About Alucan Packaging
+              Who we are
             </p>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl dark:text-slate-50">
-              Evolving into a focused metals packaging business.
+              A modern metals studio for ambitious brands.
             </h2>
             <p className="text-sm leading-relaxed text-slate-600 md:text-[15px] dark:text-slate-300">
-              With manufacturing facilities in South Africa and Angola, Alucan
-              Packaging supplies trusted products and excellent service to a
-              broad range of beverage and diversified customers. Built on a
-              strong industrial heritage, we are evolving into a focused metals
-              packaging business with a clear, sustainable growth strategy.
+              Alucan is a specialist metals packaging studio that blends
+              engineering discipline with brand thinking. We help beverage,
+              personal care and household brands turn cans into a powerful
+              extension of their identity.
             </p>
             <p className="text-sm leading-relaxed text-slate-600 md:text-[15px] dark:text-slate-300">
-              Our business is centred on aluminium and tinplate cans. In South
-              Africa and Angola, we are among the largest manufacturers of
-              beverage cans, with substantial positions in other metals
-              packaging. We are the only producer of two-piece tinplate cans and
-              aluminium monobloc aerosol cans in our home markets.
+              From early format exploration to full-scale production, our teams
+              work as an extension of your product and operations groups –
+              translating ideas into robust, manufacturable packs that run at
+              speed on modern lines.
             </p>
             <p className="text-sm leading-relaxed text-slate-600 md:text-[15px] dark:text-slate-300">
-              As a publicly owned entity with a long-standing market presence,
-              Alucan Packaging is positioned to be a high-quality,
-              market-leading business with distinctive capabilities, operating
-              in a defensive market segment underpinned by a blue-chip customer
-              base.
+              We favour long-term partnerships over one-off projects, investing
+              in shared roadmaps, joint innovation sprints and data-led
+              performance reviews to keep every launch sharper than the last.
             </p>
           </motion.div>
 

@@ -2,22 +2,22 @@ import { motion } from "framer-motion";
 
 const items = [
   {
-    title: "Aluminium beverage cans",
-    subtitle: "High-speed, high-volume lines",
-    body: "Modern lines producing a range of aluminium beverage can formats with consistent quality, advanced decoration capabilities and integrated quality inspection.",
-    tag: "Largest in South Africa & Angola"
+    title: "CanStudio™ Concepts",
+    subtitle: "Early-stage pack exploration",
+    body: "Rapid concepting for new SKUs and formats – from slim cans to specialty shapes – using virtual mockups and small pilot runs to de-risk decisions before you lock in tooling.",
+    tag: "Design + engineering"
   },
   {
-    title: "Two-piece tinplate cans",
-    subtitle: "Specialised metal packaging",
-    body: "Unique producer of two-piece tinplate cans in our home markets, serving premium food and diversified segments with robust, reliable packaging.",
-    tag: "Only producer locally"
+    title: "CanWorks™ Production",
+    subtitle: "Scale without losing detail",
+    body: "High-speed, tightly controlled production that keeps registration, colour and specifications consistent across large campaigns and multi-market launches.",
+    tag: "Production ready"
   },
   {
-    title: "Aluminium monobloc aerosol",
-    subtitle: "Precision for personal & home care",
-    body: "Monobloc aerosol cans engineered for demanding applications, combining lightweight design, strength and high-end finishes for home, personal and industrial brands.",
-    tag: "Technical excellence"
+    title: "CanLoop™ Lifecycle",
+    subtitle: "Data and circularity",
+    body: "Lightweighting, recyclability and line performance tracked over time – giving your teams a clear view of how each format behaves in the real world.",
+    tag: "Continuous improvement"
   }
 ];
 
