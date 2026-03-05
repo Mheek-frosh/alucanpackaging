@@ -9,7 +9,7 @@ import { ChatWidget } from "./components/ChatWidget";
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <div className="min-h-screen bg-surface-100 font-sans selection:bg-brand-accent/10">
       <Navbar />
       <main>
         <Hero />
@@ -20,12 +20,14 @@ function App() {
         <Contact />
       </main>
       <ChatWidget />
-      <footer className="border-t border-slate-200 bg-white/90 py-6 text-[11px] text-slate-500 dark:border-slate-800/70 dark:bg-slate-950">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 md:px-6">
+      <footer className="border-t border-surface-300 bg-surface-50 py-12 text-[12px] text-gray-500">
+        <div className="mx-auto flex max-w-[1200px] flex-col items-center justify-between gap-6 px-6 md:flex-row">
           <p>© {new Date().getFullYear()} Alucan Packaging. All rights reserved.</p>
-          <p className="text-[10px] uppercase tracking-[0.22em]">
-            Metals packaging. Trusted partners. Sustainable growth.
-          </p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-brand-light transition-colors">Privacy</a>
+            <a href="#" className="hover:text-brand-light transition-colors">Terms</a>
+            <a href="#" className="hover:text-brand-light transition-colors">Legal</a>
+          </div>
         </div>
       </footer>
     </div>

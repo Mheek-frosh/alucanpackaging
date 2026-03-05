@@ -3,21 +3,21 @@ import { motion } from "framer-motion";
 const items = [
   {
     title: "CanStudio™ Concepts",
-    subtitle: "Early-stage pack exploration",
+    subtitle: "Design & engineering",
     body: "Rapid concepting for new SKUs and formats – from slim cans to specialty shapes – using virtual mockups and small pilot runs to de-risk decisions before you lock in tooling.",
-    tag: "Design + engineering"
+    image: "https://images.pexels.com/photos/15166223/pexels-photo-15166223.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     title: "CanWorks™ Production",
-    subtitle: "Scale without losing detail",
+    subtitle: "Production ready",
     body: "High-speed, tightly controlled production that keeps registration, colour and specifications consistent across large campaigns and multi-market launches.",
-    tag: "Production ready"
+    image: "https://images.pexels.com/photos/4034873/pexels-photo-4034873.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
   {
     title: "CanLoop™ Lifecycle",
-    subtitle: "Data and circularity",
+    subtitle: "Continuous improvement",
     body: "Lightweighting, recyclability and line performance tracked over time – giving your teams a clear view of how each format behaves in the real world.",
-    tag: "Continuous improvement"
+    image: "https://images.pexels.com/photos/12693821/pexels-photo-12693821.jpeg?auto=compress&cs=tinysrgb&w=800"
   }
 ];
 
@@ -25,52 +25,54 @@ export function Capabilities() {
   return (
     <section
       id="capabilities"
-      className="border-t border-slate-200 bg-slate-50 py-16 md:py-20 dark:border-slate-800/70 dark:bg-gradient-to-b dark:from-slate-950 dark:via-slate-950 dark:to-slate-950"
+      className="bg-surface-100 py-32"
     >
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-cyan-300">
-              What we make
-            </p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl dark:text-slate-50">
-              Focused metals packaging capabilities.
-            </h2>
-          </div>
-          <p className="max-w-md text-xs text-slate-600 md:text-[13px] dark:text-slate-300">
-            Our plants in South Africa and Angola are configured around a simple
-            idea: do a few things exceptionally well. This focus allows us to
-            invest deeply in technology, quality and people.
+      <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mb-20 text-center">
+          <h2 className="mb-6 font-display text-4xl font-bold tracking-tight text-brand md:text-5xl">
+            Focused packaging capabilities.
+          </h2>
+          <p className="mx-auto max-w-2xl text-[17px] font-medium leading-relaxed text-gray-500">
+            Our plants in South Africa and Angola are configured around a simple idea: do a few things exceptionally well. This focus allows us to invest deeply in technology, quality and people.
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-3">
-          {items.map((item) => (
+        <div className="grid gap-8 md:grid-cols-3">
+          {items.map((item, i) => (
             <motion.article
               key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-4 shadow-soft dark:border-slate-800/80 dark:bg-slate-900/60"
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="group relative flex flex-col overflow-hidden rounded-[32px] bg-white shadow-soft transition-all hover:shadow-glass hover:-translate-y-1"
             >
-              <div className="pointer-events-none absolute inset-0 opacity-0 blur-3xl transition group-hover:opacity-100">
-                <div className="absolute -top-12 right-0 h-32 w-32 bg-sky-400/30 dark:bg-cyan-400/30" />
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute bottom-6 left-6 pr-6">
+                  <p className="mb-1 text-sm font-semibold uppercase tracking-widest text-white/80">
+                    {item.subtitle}
+                  </p>
+                  <h3 className="font-display text-2xl font-bold text-white">
+                    {item.title}
+                  </h3>
+                </div>
               </div>
-              <div className="relative space-y-3">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
-                  {item.subtitle}
-                </p>
-                <h3 className="text-sm font-semibold text-slate-900 md:text-[15px] dark:text-slate-50">
-                  {item.title}
-                </h3>
-                <p className="text-[11px] leading-relaxed text-slate-600 dark:text-slate-300">
+
+              <div className="flex grow flex-col justify-between p-8">
+                <p className="text-[15px] font-medium leading-relaxed text-gray-600 group-hover:text-brand-light transition-colors">
                   {item.body}
                 </p>
-                <div className="pt-2">
-                  <span className="inline-flex rounded-full bg-slate-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-700 ring-1 ring-slate-200 dark:bg-slate-950/70 dark:text-emerald-300 dark:ring-emerald-500/40">
-                    {item.tag}
-                  </span>
+                <div className="mt-8 flex items-center text-sm font-semibold text-brand-accent">
+                  Learn more
+                  <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </div>
               </div>
             </motion.article>

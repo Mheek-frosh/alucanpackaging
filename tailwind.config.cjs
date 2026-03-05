@@ -5,17 +5,28 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["system-ui", "ui-sans-serif", "Inter", "sans-serif"]
+        sans: ["-apple-system", "BlinkMacSystemFont", "Inter", "system-ui", "sans-serif"],
+        display: ["SF Pro Display", "Inter", "system-ui", "sans-serif"]
       },
       colors: {
         brand: {
-          DEFAULT: "#0B2447",
-          light: "#19376D",
-          accent: "#F97316"
+          DEFAULT: "#000000",
+          light: "#333333",
+          accent: "#0066CC", // Apple blue
+        },
+        surface: {
+          50: "#ffffff",
+          100: "#fbfbfd", // Apple background gray
+          200: "#f5f5f7",
+          300: "#e5e5ea",
         }
       },
       boxShadow: {
-        soft: "0 24px 60px rgba(15, 23, 42, 0.35)"
+        soft: "0 4px 24px rgba(0, 0, 0, 0.04)",
+        glass: "0 8px 32px rgba(0, 0, 0, 0.08)",
+      },
+      letterSpacing: {
+        tightest: '-.04em',
       }
     }
   },
